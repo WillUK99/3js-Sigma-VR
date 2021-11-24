@@ -1,11 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Three.js - Template - Simple</title>
+    <title>SIGMA</title>
 </head>
+
 <body>
-    <canvas class="webgl"></canvas>
+    <div data-scroll-container>
+
+        <!-- nav bar -->
+        <section class="navigation">
+            <h4>SIGMA</h4>
+            <nav class="navigation__nav">
+                <ul>
+                    <li><a href="/">Art</a></li>
+                    <li><a href="/">Company</a></li>
+                    <li><a href="/">Donate</a></li>
+                    <li><a href="/"><button>Contact</button></a></li>
+                </ul>
+            </nav>
+        </section>
+
+        <!-- hero -->
+        <section class="hero">
+            <div class="hero__text">
+                <h1><span>Todays habits</span><br> take on new shapes</h1>
+            </div>
+            <div class="hero__canvas">
+                <canvas class="webgl"></canvas>
+            </div>
+        </section>
+
+
+        <!-- start moving -->
+        <section class="start">
+            <div class="start__text">
+                <h2>Start moving to virtual reality.</h2>
+                <p>It's time to move on to a more advanced way of life</p>
+            </div>
+            <div class="start__ctas">
+                <a href="/">
+                    <button>
+                        Get Started
+                        <div>
+                            <svg width="23" height="23" viewBox="0 0 23 23" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M22 1L1 22M4.28788 1H22V18.7121" stroke="#131313" stroke-width="2" />
+                            </svg>
+                        </div>
+                    </button>
+                </a>
+                <a href="/">
+                    <button>
+                        Learn More
+                        <div>
+                            <svg width="23" height="23" viewBox="0 0 23 23" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M22 1L1 22M4.28788 1H22V18.7121" stroke="#131313" stroke-width="2" />
+                            </svg>
+                        </div>
+                    </button>
+                </a>
+            </div>
+        </section>
+
+        <!-- what can you do -->
+        <section class="what">
+            <h2 class="what--largeText">New age</h2>
+            <div class="what__text">
+                <h2>What can you do?</h2>
+                <p>Check out the features we provide for you in this new life</p>
+            </div>
+            <div class="what__items">
+                <div class="what__items--container">
+                    <div>
+                        <svg width="257" height="257" viewBox="0 0 257 257" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M30.8889 114.556V240.056C30.8889 248.422 35.0722 254 42.0444 254H214.956C220.533 254 226.111 248.422 226.111 240.056V114.556M3 142.444L128.5 3L254 142.444M93.6389 254V184.278C93.6389 175.911 99.2167 170.333 107.583 170.333H149.417C157.783 170.333 163.361 175.911 163.361 184.278V254"
+                                stroke="white" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <a href="/">
+                        Create an income
+                        <div>
+                            <svg width="23" height="23" viewBox="0 0 23 23" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M22 1L1 22M4.28788 1H22V18.7121" stroke="white" stroke-width="2" />
+                            </svg>
+                        </div>
+                    </a>
+                </div>
+                <div class="what__items--container">
+                    <div>
+                        <svg width="261" height="261" viewBox="0 0 261 261" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M160.25 89.4167C154.583 79.5 143.25 73.8333 130.5 73.8333M130.5 73.8333C112.083 73.8333 96.5 86.5833 96.5 102.167C96.5 113.5 103.583 123.417 114.917 127.667C126.25 133.333 141.833 130.5 153.167 137.583C160.25 143.25 164.5 150.333 164.5 158.833C164.5 174.417 148.917 187.167 130.5 187.167M130.5 73.8333V49.75M130.5 187.167C116.333 187.167 105 180.083 99.3333 170.167M130.5 187.167V211.25M258 130.5C258 200.916 200.916 258 130.5 258C60.0837 258 3 200.916 3 130.5C3 60.0837 60.0837 3 130.5 3C200.916 3 258 60.0837 258 130.5Z"
+                                stroke="white" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <a href="/">
+                        Create an income
+                        <div>
+                            <svg width="23" height="23" viewBox="0 0 23 23" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M22 1L1 22M4.28788 1H22V18.7121" stroke="white" stroke-width="2" />
+                            </svg>
+                        </div>
+                    </a>
+                </div>
+                <div class="what__items--container">
+                    <div>
+                        <svg width="253" height="267" viewBox="0 0 253 267" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M152.653 152.35C142.482 149.45 130.859 148 119.235 148C55.3059 148 3 200.2 3 264C3 264 78.5529 264 148.294 264M202.053 166.85V264M250 216.15H152.653M170.088 53.75C170.088 81.7785 147.321 104.5 119.235 104.5C91.15 104.5 68.3824 81.7785 68.3824 53.75C68.3824 25.7215 91.15 3 119.235 3C147.321 3 170.088 25.7215 170.088 53.75Z"
+                                stroke="white" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <a href="/">
+                        Create an income
+                        <div>
+                            <svg width="23" height="23" viewBox="0 0 23 23" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M22 1L1 22M4.28788 1H22V18.7121" stroke="white" stroke-width="2" />
+                            </svg>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </div>
 </body>
+
 </html>
