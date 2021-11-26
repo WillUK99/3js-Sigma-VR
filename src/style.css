@@ -50,6 +50,11 @@ input {
   border-radius: 0;
 }
 
+body {
+  background-color: #0B0C10;
+  color: white;
+}
+
 h1,
 h2,
 h3,
@@ -65,15 +70,17 @@ button,
   font-family: "Nunito", sans-serif;
 }
 
-html,
-body {
-  background-color: #0B0C10;
-}
-
-.webgl {
+.banner__canvasContainer--canvas {
   /* position: fixed;
     top: 0;
     left: 0; */
   display: none;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 /*# sourceMappingURL=style.css.map */

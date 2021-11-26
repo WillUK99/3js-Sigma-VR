@@ -7,11 +7,42 @@
     <title>SIGMA</title>
 </head>
 
-<!-- <canvas class="webgl"></canvas> -->
 
 <body>
-    
+    <!-- navigation bar -->
+    <div class="navigation">
+        <h3 class="navigation--logo">SIGMA</h3>
+        <button class="navigation__menu">
+            <span class="navigation__menu--lineTop"></span>
+            <span class="navigation__menu--lineBottom"></span>
+        </button>
+    </div>
 
-    
+    <!-- banner section -->
+    <section class="banner">
+        <div class="banner__textContainer">
+            <h1 class="banner__textContainer--topText">Todays habits</h1>
+            <h1 class="banner__textContainer--bottomText">Take on new shapes.</h1>
+        </div>
+        <div class="banner__canvasContainer">
+            <!-- <canvas class="webgl"></canvas> -->
+            <canvas class="banner__canvasContainer--canvas"></canvas>
+        </div>
+    </section>
+
+    <!-- sculpt section -->
+    <section class="sculpt">
+        <h5 class="sculpt--bgTop">SCULPT</h5>
+        <h5 class="sculpt--bgMid">SCULPT</h5>
+        <h5 class="sculpt--bgBot">SCULPT</h5>
+        
+        <div class="sculpt__container">
+            <div class="sculpt__container--left">
+                <img src="https://images.unsplash.com/photo-1601219992101-9c6430278e68?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" alt="">
+            </div>
+            <div class="sculpt__container--right"></div>
+        </div>
+    </section>
 </body>
+
 </html>

@@ -12,7 +12,7 @@ const log = console.log
  * Base
  */
 // Canvas
-const canvas = document.querySelector('canvas.webgl')
+const canvas = document.querySelector('canvas.banner__canvasContainer--canvas')
 
 // Scene
 const scene = new THREE.Scene()
@@ -188,7 +188,7 @@ const makeXYZGUI = (gui, vec3, name, onChangeFn = undefined) => {
 let targetX
 let targetY
 const mouseKnotXY = {}
-const knotCanvas = document.querySelector(".webgl")
+const knotCanvas = document.querySelector(".banner__canvasContainer--canvas")
 
 const onKnotCanvasMouseMove = (e) => {
     mouseKnotXY["x"] = e.clientX - (window.innerWidth / 2)
