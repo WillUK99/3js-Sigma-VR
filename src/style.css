@@ -1,119 +1,79 @@
-@import url("https://fonts.googleapis.com/css2?family=Noto+Serif&family=Syncopate:wght@400;700&display=swap");
-/*
-font-family: 'Noto Serif', serif;
-font-family: 'Syncopate', sans-serif;
-*/
-* {
-  margin: 0;
-  padding: 0;
+@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Nunito:wght@200&display=swap");
+*, *:before, *:after {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
 
-html {
-  scroll-behavior: smooth;
+html, body, div, span, object, iframe, figure, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, code, em, img, small, strike, strong, sub, sup, tt, b, u, i, ol, ul, li, fieldset, form, label, table, caption, tbody, tfoot, thead, tr, th, td, main, canvas, embed, footer, header, nav, section, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: none;
+     -moz-text-size-adjust: none;
+      -ms-text-size-adjust: none;
+          text-size-adjust: none;
+}
+
+footer, header, nav, section, main {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+input {
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Libre Baskerville", serif;
+}
+
+p,
+a,
+button,
+.header--sub {
+  font-family: "Nunito", sans-serif;
 }
 
 html,
 body {
-  background-color: #131313;
-  color: white;
-  width: 100%;
+  background-color: #0B0C10;
 }
 
 .webgl {
   /* position: fixed;
     top: 0;
     left: 0; */
-  outline: none;
   display: none;
-}
-
-/* .webgl {
-    display: none;
-} */
-:root {
-  --fs-750: 2rem;
-  --fs-500: 1.5rem;
-  --fs-400: 1.4rem;
-  --fs-250: 1rem;
-}
-
-h1, h2, h3, h4 {
-  font-family: 'Syncopate', sans-serif;
-}
-
-h1 {
-  font-size: var(--fs-750);
-}
-
-h1 span {
-  font-weight: 400;
-}
-
-h2 {
-  font-size: var(--fs-500);
-}
-
-h3, p, a, button {
-  font-size: var(--fs-250);
-}
-
-h4 {
-  font-size: var(--fs-400);
-}
-
-p, a, button {
-  font-family: 'Noto Serif', serif;
-}
-
-a, button {
-  cursor: pointer;
-}
-
-a {
-  text-decoration: none;
-  color: white;
-}
-
-button {
-  border: none;
-  background-color: white;
-}
-
-ul {
-  list-style-type: none;
-}
-
-section {
-  width: 90%;
-  max-width: 1600px;
-  margin: 0 auto;
-  margin: 10rem auto;
-}
-
-.navigation {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  padding: 5vh 0;
-  margin: 0 auto;
-}
-
-.navigation h4 {
-  font-weight: 400;
-}
-
-.navigation__nav ul {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 1rem;
 }
 /*# sourceMappingURL=style.css.map */

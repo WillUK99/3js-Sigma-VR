@@ -1,27 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif&family=Syncopate:wght@400;700&display=swap');
+@import "./scss/abstracts/_abstracts-dir";
+@import "./scss/base/_base-dir";
+@import "./scss/components/_components-dir";
+@import "./scss/layouts/_layouts-dir";
 
-/*
-font-family: 'Noto Serif', serif;
-font-family: 'Syncopate', sans-serif;
-*/
-
-*
-{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
 
 html,
 body
 {
-    background-color: #131313;
-    color: white;
-    width: 100%
+    background-color: #0B0C10;
 }
 
 .webgl
@@ -29,92 +15,9 @@ body
     /* position: fixed;
     top: 0;
     left: 0; */
-    outline: none;
+    // outline: none;
     display: none;
 }
-
-/* .webgl {
-    display: none;
-} */
-
-:root {
-    --fs-750: 2rem;
-    --fs-500: 1.5rem;
-    --fs-400: 1.4rem;
-    --fs-250: 1rem;
-}
-
-h1, h2, h3 ,h4 {
-    font-family: 'Syncopate', sans-serif; 
-}
-
-h1 {
-    font-size: var(--fs-750);
-    span {
-        font-weight: 400;
-    }
-}
-
-h2 {
-    font-size: var(--fs-500);
-}
-
-h3, p, a, button {
-    font-size: var(--fs-250);
-}
-
-h4 {
-    font-size: var(--fs-400)
-}
-
-p, a, button {
-    font-family: 'Noto Serif', serif;
-}
-
-a, button {
-    cursor: pointer;
-}
-
-a {
-    text-decoration: none;
-    color: white;
-}
-
-button {
-    border: none;
-    background-color: white;
-}
-
-ul {
-    list-style-type: none;
-}
-
-section {
-    width: 90%;
-    max-width: 1600px;
-    margin: 0 auto;
-    margin: 10rem auto;
-}
-
-.navigation {
-    // outline: 1px solid springgreen;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 5vh 0;
-    margin: 0 auto;
-    h4 {
-        font-weight: 400;
-    }
-    &__nav {
-        ul {
-            display: flex;
-            gap: 1rem;
-            // outline: 1px solid red;
-        }
-    }
-}
-
 
 
 
