@@ -59,15 +59,26 @@ h1,
 h2,
 h3,
 h4,
-h5 {
+h5,
+p {
   font-family: "Libre Baskerville", serif;
 }
 
-p,
 a,
 button,
 .header--sub {
   font-family: "Nunito", sans-serif;
+}
+
+.navigation--logo {
+  font-family: "Nunito", sans-serif;
+  font-size: clamp(3rem, 4rem, 5rem);
+}
+
+.width--90 {
+  width: 90%;
+  max-width: 1600px;
+  margin: 0 auto;
 }
 
 .banner__canvasContainer--canvas {

@@ -1,12 +1,18 @@
 import './style.css'
 import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
-import { AnaglyphEffect } from 'three/examples/jsm/effects/AnaglyphEffect.js';
 import { GUI } from 'dat.gui'
 import { DoubleSide, PointLightHelper } from 'three'
 import gsap from 'gsap/all';
+import girlImage from '../static/assets/images/bluegirl.jpg';
+import fabricWaves from '../static/assets/images/fabricwaves.jpg';
+import bluemilk from '../static/assets/images/milk.jpg';
 
-const log = console.log
+const blueGirlImage = document.querySelector(".sculpt__container--left--girl")
+blueGirlImage.src = girlImage
+blueGirlImage.loading = "lazy"
+
+
 
 /**
  * Base
