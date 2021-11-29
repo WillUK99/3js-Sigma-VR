@@ -2,3 +2,17 @@ body {
     background-color: #0B0C10;
     color: white;
 }
+
+section {
+    margin: 4rem 0;
+}
+
+a, button {
+    cursor: pointer;
+}
+
+.width--90 {
+    width: 90%;
+    max-width: 1600px;
+    margin: 15rem auto;
+}

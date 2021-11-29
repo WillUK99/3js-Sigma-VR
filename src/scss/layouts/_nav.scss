@@ -1,0 +1,10 @@
+.navigation {
+    margin: 2rem auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &__menu {
+        width: 150px;
+        height: 20px;
+    }
+}

@@ -16,5 +16,14 @@ button,
 
 .navigation--logo {
     font-family: "Nunito", sans-serif;
-    font-size: clamp(3rem, 4rem, 5rem);
+    font-size: clamp(2rem, 3rem, 4rem);
+}
+
+.banner {
+    .banner__textContainer--topText {
+
+    }
+    .banner__textContainer--bottomText {
+        
+    }
 }
