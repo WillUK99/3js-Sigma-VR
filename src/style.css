@@ -57,6 +57,7 @@ body {
 
 section {
   margin: 4rem 0;
+  overflow: hidden;
 }
 
 a, button {
@@ -66,7 +67,15 @@ a, button {
 .width--90 {
   width: 90%;
   max-width: 1600px;
-  margin: 15rem auto;
+  margin: 8rem auto;
+}
+
+:root {
+  --fs-logo: 2.5rem;
+  --fs-hm: 2rem;
+  --fs-hs: 1.5rem;
+  --fs-to: 6.5rem;
+  --fs-sh: 1.7rem;
 }
 
 h1,
@@ -86,7 +95,34 @@ button,
 
 .navigation--logo {
   font-family: "Nunito", sans-serif;
-  font-size: clamp(2rem, 3rem, 4rem);
+  font-size: var(--fs-logo);
+}
+
+.banner {
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.banner .banner__textContainer--topText {
+  font-size: clamp(2rem, 2rem, 8rem);
+  font-size: var(--fs-hm);
+}
+
+.banner .banner__textContainer--bottomText {
+  font-family: "Nunito", sans-serif;
+  font-size: var(--fs-hs);
+}
+
+.text--outline {
+  font-size: var(--fs-to);
+  text-transform: uppercase;
+  color: transparent;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: rgba(13, 148, 204, 0.5);
+}
+
+.section--header {
+  font-size: var(--fs-sh);
 }
 
 button {
@@ -134,7 +170,8 @@ button {
 }
 
 .navigation {
-  margin: 2rem auto;
+  margin-top: 2rem;
+  margin-bottom: 0rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -149,6 +186,66 @@ button {
 .navigation__menu {
   width: 150px;
   height: 20px;
+}
+
+.banner {
+  height: 90vh;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.sculpt {
+  position: relative;
+}
+
+.sculpt__bgContainer {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  pointer-events: none;
+  z-index: -10;
+}
+
+.sculpt__bgContainer .text--outline:nth-of-type(2) {
+  margin: 3rem 0;
+}
+
+.sculpt__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 1rem;
+}
+
+.sculpt__container--left {
+  outline: 1px solid blue;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 40%;
+          flex: 1 1 40%;
+  max-width: 250px;
+}
+
+.sculpt__container--right {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 55%;
+          flex: 1 1 55%;
+  outline: 1px solid red;
 }
 
 .banner__canvasContainer--canvas {

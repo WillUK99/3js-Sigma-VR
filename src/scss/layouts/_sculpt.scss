@@ -1,0 +1,35 @@
+.sculpt {
+    position: relative;
+    &__bgContainer {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        pointer-events: none;
+        z-index: -10;
+        .text--outline {
+            &:nth-of-type(2) {
+                margin: 3rem 0;
+            }
+        }
+    }
+    &__container {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        gap: 1rem;
+        &--left {
+            outline: 1px solid blue;
+            flex: 1 1 40%;
+            max-width: 250px;
+            &--girl {
+                // width: 100%;
+            }
+        }
+        &--right {
+            flex: 1 1 55%;
+            outline: 1px solid red;
+            &--header {
+            }
+        }
+    }
+}

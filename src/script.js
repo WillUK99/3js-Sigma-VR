@@ -13,7 +13,6 @@ blueGirlImage.src = girlImage
 blueGirlImage.loading = "lazy"
 
 
-
 /**
  * Base
  */
