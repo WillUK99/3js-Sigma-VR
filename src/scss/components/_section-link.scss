@@ -1,0 +1,9 @@
+.section--link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+
+    svg {
+        margin-left: 0.5rem;
+    }
+}

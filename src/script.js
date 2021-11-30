@@ -7,10 +7,21 @@ import gsap from 'gsap/all';
 import girlImage from '../static/assets/images/bluegirl.jpg';
 import fabricWaves from '../static/assets/images/fabricwaves.jpg';
 import bluemilk from '../static/assets/images/milk.jpg';
+import placeHolder1 from "../static/assets/images/shaderPlaceholder1.jpg";
+import placeHolder2 from "../static/assets/images/shaderPlaceholder2.png";
 
-const blueGirlImage = document.querySelector(".sculpt__container--left--girl")
-blueGirlImage.src = girlImage
-blueGirlImage.loading = "lazy"
+const loadingImages = (targetElementClass, imageSrc) => {
+    const targetElement = document.querySelector(targetElementClass)
+    targetElement.src = imageSrc
+    targetElement.loading = "lazy"
+}
+
+loadingImages(".blue--girl", girlImage)
+loadingImages(".experience__container--canvas", placeHolder1)
+loadingImages(".blue--fabric", fabricWaves)
+loadingImages(".observe__container--canvas", placeHolder2)
+loadingImages(".blue--milk", bluemilk)
+
 
 
 /**

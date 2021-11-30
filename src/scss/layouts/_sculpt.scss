@@ -13,23 +13,21 @@
         }
     }
     &__container {
-        display: flex;
-        flex-flow: row nowrap;
-        justify-content: space-between;
-        gap: 1rem;
-        &--left {
-            outline: 1px solid blue;
-            flex: 1 1 40%;
-            max-width: 250px;
+        &--top {
+            display: flex;
+            flex-flow: row nowrap;
+            align-items: center;
+            gap: 2rem;
             &--girl {
-                // width: 100%;
+                max-width: 150px;
             }
         }
-        &--right {
-            flex: 1 1 55%;
-            outline: 1px solid red;
-            &--header {
-            }
+        &--bottom {
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-top: 1rem;
         }
     }
 }

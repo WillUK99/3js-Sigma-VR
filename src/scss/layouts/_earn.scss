@@ -1,0 +1,31 @@
+.earn {
+    .width--90 {
+        margin-top: 0rem;
+    }
+    &__container {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+    &__text {
+        position: absolute;
+        top: -1.5rem;
+        left: 0;
+        width: 80%;
+        &--number {
+            padding: 4rem 0;
+        }
+        p {
+            max-width: 70%;
+        }
+    }
+    &__image {
+        width: 60%;
+        max-width: 500px;
+        
+    }
+    .section--link {
+        margin-top: 1.5rem;
+    }
+}
