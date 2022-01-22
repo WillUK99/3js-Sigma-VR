@@ -1,0 +1,33 @@
+.social {
+    position: relative;
+    &__container {
+        display: flex;
+        flex-flow: row nowrap;
+    }
+    &__image {
+       width: 50%;
+       max-width: 900px;
+       z-index: -10;
+    }
+    &__textContainer {
+        position: relative;
+        padding: 2rem 0;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: space-around;
+        z-index: 10;
+        margin-left: -4rem;
+        max-width: 60%;
+        &--number {
+            margin-left: 2rem;
+            // remove margin for big phones -> fixes weird spacing on iPhone SE
+        }
+    }
+    &__numberContainer {
+        display: flex;
+        justify-content: space-between;
+    }
+    &__bgBot  {
+        transform: rotate(180deg);
+    }
+}

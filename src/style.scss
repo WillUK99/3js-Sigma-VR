@@ -18,6 +18,18 @@ img {
     object-fit: cover;
 }
 
+@media (max-width: 768px) {
+    .hide--sm {
+        display: none;
+    }
+}
+
+@media(min-width: 768px) {
+    .hide--md {
+        display: none;
+    }
+}
+
 
 
 

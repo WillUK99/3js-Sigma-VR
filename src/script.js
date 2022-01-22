@@ -28,7 +28,7 @@ loadingImages(".blue--milk", bluemilk)
  * Base
  */
 // Canvas
-const canvas = document.querySelector('canvas.banner__canvasContainer--canvas')
+const canvasEl = document.querySelector('.banner__canvasContainer--canvas')
 
 // Scene
 const scene = new THREE.Scene()
@@ -138,7 +138,7 @@ scene.add(torusOne)
  * Renderer
  */
 const renderer = new THREE.WebGLRenderer({
-    canvas: canvas,
+    // canvas: canvasEl,
     antialias: true,
 })
 renderer.setSize(sizes.width, sizes.height)
@@ -201,17 +201,6 @@ const makeXYZGUI = (gui, vec3, name, onChangeFn = undefined) => {
 /**
  * Mouse Interactions
  */
-let targetX
-let targetY
-const mouseKnotXY = {}
-const knotCanvas = document.querySelector(".banner__canvasContainer--canvas")
-
-const onKnotCanvasMouseMove = (e) => {
-    mouseKnotXY["x"] = e.clientX - (window.innerWidth / 2)
-    mouseKnotXY["y"] = e.clientY - (window.innerHeight / 2)
-}
-
-knotCanvas.addEventListener("mousemove", onKnotCanvasMouseMove)
 
 
 
@@ -233,8 +222,6 @@ const tick = () => {
         // material.userData.shader.uniforms.uMouse.value = mouseKnotXY
     }
 
-    targetX = mouseKnotXY.x / 1000
-    targetY = mouseKnotXY.y / 1000
  
     torusOne.rotation.y = elapsedTime / 3
     torusOne.rotation.z = elapsedTime / 4

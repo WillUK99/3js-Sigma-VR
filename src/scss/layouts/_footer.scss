@@ -1,0 +1,42 @@
+.footer {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 3rem;
+    p {
+        max-width: 80%;
+    }
+    &__inputLinks {
+        display: flex;
+        justify-content: space-between;
+        form {
+            position: relative;
+            input {
+                outline: none;
+                border: none;
+                background-color: transparent;
+                position: relative;
+                // input cant have ::after
+                &::after {
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    bottom: -3px;
+                    height: 1px;
+                    width: 100%;
+                    background-color: white;
+                }
+            }
+            button {
+                position: absolute;
+                right: 0;
+                background-color: transparent;
+                color: white;
+                border: none;
+            }
+        }
+        &__links {
+            display: flex;
+            gap: 1rem;
+        }
+    }
+}
