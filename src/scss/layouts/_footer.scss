@@ -1,42 +1,83 @@
+@import "../abstracts/animations";
+
 .footer {
     display: flex;
     flex-flow: column nowrap;
     gap: 3rem;
+    margin-bottom: 1rem;
     p {
         max-width: 80%;
     }
     &__inputLinks {
         display: flex;
+        flex-flow: column wrap;
         justify-content: space-between;
+        gap: 2rem;
         form {
             position: relative;
+            height: min-content;
+            max-width: 200px;
+            &::after {
+                content: "";
+                position: absolute;
+                left: 0;
+                bottom: -3px;
+                height: 1px;
+                width: 110%;
+                background-color: white;
+            }
             input {
                 outline: none;
                 border: none;
                 background-color: transparent;
-                position: relative;
-                // input cant have ::after
-                &::after {
-                    content: "";
-                    position: absolute;
-                    left: 0;
-                    bottom: -3px;
-                    height: 1px;
-                    width: 100%;
-                    background-color: white;
-                }
+                max-width: 75%;
             }
             button {
                 position: absolute;
-                right: 0;
+                right: -10%;
+                bottom: 0;
                 background-color: transparent;
                 color: white;
                 border: none;
+                background-color: #0b0c10;
             }
         }
         &__links {
             display: flex;
             gap: 1rem;
+            ul {
+                display: flex;
+                flex-flow: column nowrap;
+                gap: 0.5rem;
+                li {
+                    text-decoration: none;
+                    color: white;
+                    a {
+                        text-decoration: none;
+                        color: white;
+                        position: relative;
+                        transition: transform 0.3s cubic-bezier(0.215, 0.610, 0.355, 1);
+                        &::before {
+                            content: "";
+                            position: absolute;
+                            top: 50%;
+                            height: 1px;
+                            width: 100%;
+                            background: white;
+                            transform-origin: 100% 50%;
+                            transform: scale3d(0, 1, 1);
+                            transition: transform 0.3s cubic-bezier(0.215, 0.610, 0.355, 1);
+                        }
+                        &:hover {
+                            transform: scale3d(1.5, 1.5, 1.5);
+                            &::before {
+                                transform-origin: 0% 50%;
+                                transform: scale3d(1, 1, 1);
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }

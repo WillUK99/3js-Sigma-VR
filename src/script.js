@@ -22,6 +22,26 @@ loadingImages(".blue--fabric", fabricWaves)
 loadingImages(".observe__container--canvas", placeHolder2)
 loadingImages(".blue--milk", bluemilk)
 
+let mouseXY = {}
+
+document.addEventListener("DOMContentLoaded", (e) => {
+    mouseXY = {
+        x: e.pageX,
+        y: e.pageY
+    }
+})
+
+document.addEventListener("mousemove", (e) => {
+    mouseXY.x = e.pageX
+    mouseXY.y = e.pageY
+
+    gsap.to(".cursor", {
+        x: mouseXY.x - 50,
+        y: mouseXY.y - 50,
+        duration: 0.3,
+        
+    })
+})
 
 
 /**

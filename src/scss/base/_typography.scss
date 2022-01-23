@@ -10,6 +10,8 @@
     --fs-ct: 3rem;
     --fs-cb: 3rem;
     --fs-p: 0.8rem;
+    --fs-fi: 1rem;
+    --fs-fl: 0.8rem;
 }
 
 h1,
@@ -23,6 +25,30 @@ p {
 
 p {
     font-size: var(--fs-p);
+}
+
+form {
+    input {
+        color: rgb(118, 118, 118);
+        font-family: "Libre Baskerville", serif;
+        font-size: var(--fs-fi);
+    }
+}
+
+footer {
+    a,
+    small {
+        font-size: var(--fs-fl);
+    }
+    small {
+        color: rgb(118, 118, 118);
+        font-family: "Nunito", sans-serif;
+    }
+    .footer__legals {
+        display: flex;
+        flex-flow: column nowrap;
+        gap: 0.5em;
+    }
 }
 
 a,

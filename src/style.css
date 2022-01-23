@@ -82,6 +82,8 @@ a, button {
   --fs-ct: 3rem;
   --fs-cb: 3rem;
   --fs-p: 0.8rem;
+  --fs-fi: 1rem;
+  --fs-fl: 0.8rem;
 }
 
 h1,
@@ -95,6 +97,33 @@ p {
 
 p {
   font-size: var(--fs-p);
+}
+
+form input {
+  color: #767676;
+  font-family: "Libre Baskerville", serif;
+  font-size: var(--fs-fi);
+}
+
+footer a,
+footer small {
+  font-size: var(--fs-fl);
+}
+
+footer small {
+  color: #767676;
+  font-family: "Nunito", sans-serif;
+}
+
+footer .footer__legals {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  gap: 0.5em;
 }
 
 a,
@@ -232,6 +261,17 @@ button {
 
 .section--number .section--info {
   max-width: 100px;
+}
+
+.cursor {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid white;
+  mix-blend-mode: difference;
+  position: absolute;
+  top: -5rem;
+  z-index: 9999;
 }
 
 .navigation {
@@ -489,6 +529,7 @@ button {
       -ms-flex-flow: column nowrap;
           flex-flow: column nowrap;
   gap: 3rem;
+  margin-bottom: 1rem;
 }
 
 .footer p {
@@ -499,38 +540,49 @@ button {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  gap: 2rem;
 }
 
 .footer__inputLinks form {
   position: relative;
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
+  max-width: 200px;
+}
+
+.footer__inputLinks form::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  height: 1px;
+  width: 110%;
+  background-color: white;
 }
 
 .footer__inputLinks form input {
   outline: none;
   border: none;
   background-color: transparent;
-  position: relative;
-}
-
-.footer__inputLinks form input::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -3px;
-  height: 1px;
-  width: 100%;
-  background-color: white;
+  max-width: 75%;
 }
 
 .footer__inputLinks form button {
   position: absolute;
-  right: 0;
+  right: -10%;
+  bottom: 0;
   background-color: transparent;
   color: white;
   border: none;
+  background-color: #0b0c10;
 }
 
 .footer__inputLinks__links {
@@ -538,6 +590,61 @@ button {
   display: -ms-flexbox;
   display: flex;
   gap: 1rem;
+}
+
+.footer__inputLinks__links ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  gap: 0.5rem;
+}
+
+.footer__inputLinks__links ul li {
+  text-decoration: none;
+  color: white;
+}
+
+.footer__inputLinks__links ul li a {
+  text-decoration: none;
+  color: white;
+  position: relative;
+  -webkit-transition: -webkit-transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: -webkit-transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1), -webkit-transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.footer__inputLinks__links ul li a::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  height: 1px;
+  width: 100%;
+  background: white;
+  -webkit-transform-origin: 100% 50%;
+          transform-origin: 100% 50%;
+  -webkit-transform: scale3d(0, 1, 1);
+          transform: scale3d(0, 1, 1);
+  -webkit-transition: -webkit-transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: -webkit-transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1), -webkit-transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.footer__inputLinks__links ul li a:hover {
+  -webkit-transform: scale3d(1.5, 1.5, 1.5);
+          transform: scale3d(1.5, 1.5, 1.5);
+}
+
+.footer__inputLinks__links ul li a:hover::before {
+  -webkit-transform-origin: 0% 50%;
+          transform-origin: 0% 50%;
+  -webkit-transform: scale3d(1, 1, 1);
+          transform: scale3d(1, 1, 1);
 }
 
 img {
