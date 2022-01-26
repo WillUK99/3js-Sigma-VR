@@ -80,4 +80,28 @@
             }
         }
     }
+
+    @media (min-width: 500px) {
+        &__inputLinks {
+            flex-direction: row;
+            gap: 1rem;
+        }
+    }
+
+    @media (min-width: 750px) {
+        p {
+            max-width: 50%;
+            align-self: flex-end;
+        }
+    }
+
+    @media (min-width: 850px) {
+        &__inputLinks__links {
+            gap: 5rem;
+        }
+    } 
+
+    @media (min-width: 1400px) {
+        gap: 6rem;
+    }
 }

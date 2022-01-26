@@ -1,4 +1,25 @@
 @import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Nunito:wght@200&display=swap");
+@-webkit-keyframes pulse-wave {
+  from {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  to {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+}
+@keyframes pulse-wave {
+  from {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  to {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+}
+
 *, *:before, *:after {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -52,12 +73,25 @@ input {
 
 body {
   background-color: #0B0C10;
-  color: white;
+  color: #ffffff;
+  overflow-x: hidden;
 }
 
 section {
-  margin: 4rem 0;
+  margin: 8rem 0;
   overflow: hidden;
+}
+
+@media (min-width: 750px) {
+  section {
+    margin: 10rem 0;
+  }
+}
+
+@media (min-width: 1350px) {
+  section {
+    margin: 13rem 0;
+  }
 }
 
 a, button {
@@ -68,6 +102,18 @@ a, button {
   width: 90%;
   max-width: 1600px;
   margin: 8rem auto;
+}
+
+@media (min-width: 750px) {
+  .width--90 {
+    margin: 10rem auto;
+  }
+}
+
+@media (min-width: 1350px) {
+  .width--90 {
+    margin: 13rem auto;
+  }
 }
 
 :root {
@@ -84,6 +130,83 @@ a, button {
   --fs-p: 0.8rem;
   --fs-fi: 1rem;
   --fs-fl: 0.8rem;
+}
+
+@media (min-width: 500px) {
+  :root {
+    --fs-hm: 2.8rem;
+    --fs-hs: 2rem;
+    --fs-to: 8.5rem;
+    --fs-sh: 1.6rem;
+    --fs-ct: 4rem;
+    --fs-cb: 3rem;
+    --fs-p: 0.9rem;
+  }
+}
+
+@media (min-width: 750px) {
+  :root {
+    --fs-hm: 4rem;
+    --fs-hs: 2.3rem;
+    --fs-to: 10rem;
+    --fs-sh: 2.5rem;
+    --fs-ct: 5rem;
+    --fs-cb: 4rem;
+    --fs-p: 1rem;
+  }
+}
+
+@media (min-width: 850px) {
+  :root {
+    --fs-hm: 4rem;
+    --fs-hs: 2.3rem;
+    --fs-to: 12rem;
+    --fs-ct: 5.5rem;
+    --fs-cb: 4.2rem;
+    --fs-p: 1.1rem;
+  }
+}
+
+@media (min-width: 1050px) {
+  :root {
+    --fs-hm: 5.5rem;
+    --fs-hs: 3.2rem;
+    --fs-to: 16rem;
+    --fs-sh: 3.1rem;
+    --fs-ct: 7rem;
+    --fs-cb: 5rem;
+    --fs-p: 1.2rem;
+  }
+}
+
+@media (min-width: 1250px) {
+  :root {
+    --fs-to: 18rem;
+    --fs-sh: 4rem;
+    --fs-ct: 8rem;
+    --fs-cb: 6rem;
+    --fs-p: 1.2rem;
+  }
+}
+
+@media (min-width: 1400px) {
+  :root {
+    --fs-to: 18rem;
+    --fs-sh: 4.5rem;
+    --fs-ct: 8rem;
+    --fs-cb: 6rem;
+    --fs-p: 1.2rem;
+  }
+}
+
+@media (min-width: 1536px) {
+  :root {
+    --fs-to: 18rem;
+    --fs-sh: 5rem;
+    --fs-ct: 8rem;
+    --fs-cb: 6rem;
+    --fs-p: 1.2rem;
+  }
 }
 
 h1,
@@ -191,6 +314,14 @@ button,
   text-align: right;
 }
 
+.observe h2 {
+  font-size: var(--fs-ct);
+}
+
+.observe h3 {
+  font-size: var(--fs-cb);
+}
+
 button {
   background-color: unset;
   border: none;
@@ -260,18 +391,26 @@ button {
 }
 
 .section--number .section--info {
-  max-width: 100px;
+  max-width: 90px;
+}
+
+@media (min-width: 1050px) {
+  .section--number .section--info {
+    width: 85px;
+  }
 }
 
 .cursor {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  border: 1px solid white;
+  border: 2px solid white;
   mix-blend-mode: difference;
-  position: absolute;
-  top: -5rem;
+  position: fixed;
+  top: -50px;
+  left: -50px;
   z-index: 9999;
+  overflow: hidden;
 }
 
 .navigation {
@@ -314,8 +453,9 @@ button {
 .sculpt__bgContainer {
   position: absolute;
   top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   pointer-events: none;
   z-index: -10;
 }
@@ -357,6 +497,39 @@ button {
       -ms-flex-align: end;
           align-items: flex-end;
   margin-top: 1rem;
+}
+
+@media (min-width: 500px) {
+  .sculpt__bgContainer .text--outline:nth-of-type(2) {
+    margin: 4rem 0;
+  }
+  .sculpt__container--top {
+    gap: 2rem;
+  }
+  .sculpt__container--top--girl {
+    width: 40%;
+    max-width: 500px;
+  }
+}
+
+@media (min-width: 1050px) {
+  .sculpt__bgContainer .text--outline:nth-of-type(2) {
+    margin: 0rem 0;
+  }
+  .sculpt__container--top {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    gap: 4rem;
+  }
+  .sculpt__container--bottom {
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+  .sculpt .blue--girl {
+    max-width: 250px;
+  }
 }
 
 .experience {
@@ -431,6 +604,80 @@ button {
 
 .earn .section--link {
   margin-top: 1.5rem;
+}
+
+@media (min-width: 1050px) {
+  .earn {
+    position: relative;
+    overflow-y: visible;
+    overflow: revert;
+  }
+  .earn__bg {
+    position: absolute;
+    left: -65%;
+    top: 20%;
+    -webkit-transform: translateX(55%) rotate(90deg);
+            transform: translateX(55%) rotate(90deg);
+  }
+  .earn__text {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    left: unset;
+    right: 0;
+    width: 100%;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+  }
+  .earn__text h2 {
+    max-width: 90%;
+    margin: 0 auto;
+    text-align: right;
+  }
+  .earn__text p {
+    max-width: 40%;
+    margin-left: 37%;
+  }
+  .earn__text .section--number {
+    margin-left: 37%;
+  }
+  .earn__image {
+    width: 50%;
+  }
+}
+
+@media (min-width: 1250px) {
+  .earn p,
+  .earn .section--number,
+  .earn .section--link {
+    margin-left: 45%;
+    margin-right: auto;
+  }
+}
+
+@media (min-width: 1400px) {
+  .earn__image {
+    width: 60%;
+    max-width: 550px;
+  }
+  .earn__bg {
+    position: absolute;
+    left: -50%;
+  }
+}
+
+@media (min-width: 1536px) {
+  .earn__image {
+    max-width: 610px;
+  }
+  .earn__text p {
+    max-width: 25%;
+  }
 }
 
 .observe {
@@ -518,6 +765,77 @@ button {
 .social__bgBot {
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
+}
+
+@media (min-width: 500px) {
+  .social__textContainer--details {
+    max-width: 80%;
+  }
+}
+
+@media (min-width: 750px) {
+  .social__textContainer--details {
+    max-width: 65%;
+  }
+}
+
+@media (min-width: 768px) {
+  .social__image {
+    max-height: 700px;
+  }
+  .social__textContainer--details {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+    gap: 3rem;
+  }
+  .social__textContainer--details a {
+    -ms-flex-item-align: start;
+        align-self: flex-start;
+  }
+  .social__textContainer--number {
+    margin-left: 0;
+  }
+}
+
+@media (min-width: 1250px) {
+  .social__image {
+    height: 700px;
+    max-width: 450px;
+  }
+  .social__textContainer {
+    max-width: 85%;
+  }
+  .social__textContainer--details {
+    max-width: 30%;
+  }
+  .social .section--number {
+    position: absolute;
+    right: 15%;
+    top: 60%;
+  }
+  .social .section--link {
+    -ms-flex-item-align: end;
+        align-self: flex-end;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+}
+
+@keyframes pulse-wave {
+  from {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  to {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
 }
 
 .footer {
@@ -647,6 +965,36 @@ button {
           transform: scale3d(1, 1, 1);
 }
 
+@media (min-width: 500px) {
+  .footer__inputLinks {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    gap: 1rem;
+  }
+}
+
+@media (min-width: 750px) {
+  .footer p {
+    max-width: 50%;
+    -ms-flex-item-align: end;
+        align-self: flex-end;
+  }
+}
+
+@media (min-width: 850px) {
+  .footer__inputLinks__links {
+    gap: 5rem;
+  }
+}
+
+@media (min-width: 1400px) {
+  .footer {
+    gap: 6rem;
+  }
+}
+
 img {
   width: 100%;
   height: 100%;
@@ -662,6 +1010,18 @@ img {
 
 @media (min-width: 768px) {
   .hide--md {
+    display: none;
+  }
+}
+
+@media (max-width: 1050px) {
+  .hide--uptoLarge {
+    display: none;
+  }
+}
+
+@media (min-width: 1050px) {
+  .hide--lg {
     display: none;
   }
 }

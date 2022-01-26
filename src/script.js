@@ -4,11 +4,14 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 import { GUI } from 'dat.gui'
 import { DoubleSide, PointLightHelper } from 'three'
 import gsap from 'gsap/all';
+import { ScrollTrigger } from "gsap/ScrollTrigger.js";
 import girlImage from '../static/assets/images/bluegirl.jpg';
 import fabricWaves from '../static/assets/images/fabricwaves.jpg';
 import bluemilk from '../static/assets/images/milk.jpg';
 import placeHolder1 from "../static/assets/images/shaderPlaceholder1.jpg";
 import placeHolder2 from "../static/assets/images/shaderPlaceholder2.png";
+
+gsap.registerPlugin(ScrollTrigger)
 
 const loadingImages = (targetElementClass, imageSrc) => {
     const targetElement = document.querySelector(targetElementClass)
@@ -22,26 +25,73 @@ loadingImages(".blue--fabric", fabricWaves)
 loadingImages(".observe__container--canvas", placeHolder2)
 loadingImages(".blue--milk", bluemilk)
 
+/**
+ * Mouse cursor
+ */
+const cursor = document.querySelector(".cursor")
+
 let mouseXY = {}
 
-document.addEventListener("DOMContentLoaded", (e) => {
-    mouseXY = {
-        x: e.pageX,
-        y: e.pageY
-    }
-})
+const mousemoveHandler = (e) => {
+    mouseXY.x = e.clientX,
+    mouseXY.y = e.clientY
 
-document.addEventListener("mousemove", (e) => {
-    mouseXY.x = e.pageX
-    mouseXY.y = e.pageY
-
-    gsap.to(".cursor", {
-        x: mouseXY.x - 50,
-        y: mouseXY.y - 50,
-        duration: 0.3,
-        
+    gsap.to(cursor, 0.2,{
+        opacity: 1,
+        ease: "power2.out",
+        css: {
+            left: mouseXY.x,
+            y: mouseXY.y
+        }
     })
-})
+}
+
+const mouseleaveHandler = (e) => {
+    gsap.to(cursor, {
+        opacity: 0,
+    })
+}
+
+window.addEventListener("mousemove", mousemoveHandler)
+window.addEventListener("mouseleave", mouseleaveHandler)
+
+gsap.registerPlugin(ScrollTrigger)
+
+/**
+ * GSAP Animations
+ */
+// Nav Animations
+gsap.from(".navigation", {
+    duration: 2,
+    delay: 1,
+    opacity: 0
+}) 
+
+// Banner Animations
+// gsap.from(".banner__textContainer--topText, .banner__textContainer--bottomText", {
+//     duration: 2,
+//     delay: 2,
+//     opacity: 0,
+//     stagger: 0.5
+// })
+
+// let bannerTl = gsap.timeline({
+//     scrollTrigger: {
+//         trigger: ".banner",
+//         start: "top 5%",
+//         end: "bottom 80%",
+//         scrub: 1,
+//     }
+// })
+
+// bannerTl.to(".banner__textContainer--topText", {
+//    y: -10, 
+// }).to(".banner__textContainer--bottomText", {
+//     y: 10, 
+// }, "<")
+// Threejs canvas will be added to this timeline also
+
+// Sculpt Animations
 
 
 /**

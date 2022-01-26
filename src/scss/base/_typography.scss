@@ -14,6 +14,83 @@
     --fs-fl: 0.8rem;
 }
 
+@media (min-width: 500px) {
+    :root {
+        --fs-hm: 2.8rem;
+        --fs-hs: 2rem;
+        --fs-to: 8.5rem;
+        --fs-sh: 1.6rem;
+        --fs-ct: 4rem;
+        --fs-cb: 3rem;
+        --fs-p: 0.9rem;
+    }
+}
+
+@media (min-width: 750px) {
+    :root {
+        --fs-hm: 4rem;
+        --fs-hs: 2.3rem;
+        --fs-to: 10rem;
+        --fs-sh: 2.5rem;
+        --fs-ct: 5rem;
+        --fs-cb: 4rem;
+        --fs-p: 1rem;
+    }
+}
+
+@media (min-width: 850px) {
+    :root {
+        --fs-hm: 4rem;
+        --fs-hs: 2.3rem;
+        --fs-to: 12rem;
+        --fs-ct: 5.5rem;
+        --fs-cb: 4.2rem;
+        --fs-p: 1.1rem;
+    }
+}
+
+@media (min-width: 1050px) {
+    :root {
+        --fs-hm: 5.5rem;
+        --fs-hs: 3.2rem;
+        --fs-to: 16rem;
+        --fs-sh: 3.1rem;
+        --fs-ct: 7rem;
+        --fs-cb: 5rem;
+        --fs-p: 1.2rem;
+    }
+}
+
+@media (min-width: 1250px) {
+    :root {
+        --fs-to: 18rem;
+        --fs-sh: 4rem;
+        --fs-ct: 8rem;
+        --fs-cb: 6rem;
+        --fs-p: 1.2rem;
+    }
+}
+
+@media (min-width: 1400px) {
+    :root {
+        --fs-to: 18rem;
+        --fs-sh: 4.5rem;
+        --fs-ct: 8rem;
+        --fs-cb: 6rem;
+        --fs-p: 1.2rem;
+    }
+}
+
+@media (min-width: 1536px) {
+    :root {
+        --fs-to: 18rem;
+        --fs-sh: 5rem;
+        --fs-ct: 8rem;
+        --fs-cb: 6rem;
+        --fs-p: 1.2rem;
+    }
+}
+
 h1,
 h2,
 h3,
@@ -112,4 +189,13 @@ button,
 .canvas--text--bottom {
     font-size: var(--fs-cb);
     text-align: right;
+}
+
+.observe {
+    h2 {
+        font-size: var(--fs-ct);
+    }
+    h3 {
+        font-size: var(--fs-cb);
+    }
 }

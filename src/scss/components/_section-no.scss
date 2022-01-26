@@ -3,6 +3,11 @@
     align-items: center;
     gap: 0.5rem;
     .section--info {
-        max-width: 100px;
+        max-width: 90px;
+    }
+    @media (min-width: 1050px) {
+        .section--info {
+            width: 85px;
+        }
     }
 }   
