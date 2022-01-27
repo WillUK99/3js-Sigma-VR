@@ -144,7 +144,6 @@ scene.add(camera)
  * Torus
  */
 const torusGeo = new THREE.TorusKnotBufferGeometry(5, 1, 4096, 6)
-// const torusGeo = new THREE.SphereGeometry(5, 64)
 
 
 const getMaterial = () => {
@@ -208,7 +207,7 @@ scene.add(torusOne)
  * Renderer
  */
 const renderer = new THREE.WebGLRenderer({
-    // canvas: canvasEl,
+    canvas: canvasEl,
     antialias: true,
 })
 renderer.setSize(sizes.width, sizes.height)
