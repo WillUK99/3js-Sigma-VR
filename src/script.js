@@ -34,9 +34,9 @@ let mouseXY = {}
 
 const mousemoveHandler = (e) => {
     mouseXY.x = e.clientX,
-    mouseXY.y = e.clientY
+        mouseXY.y = e.clientY
 
-    gsap.to(cursor, 0.2,{
+    gsap.to(cursor, 0.2, {
         opacity: 1,
         ease: "power2.out",
         css: {
@@ -60,38 +60,161 @@ gsap.registerPlugin(ScrollTrigger)
 /**
  * GSAP Animations
  */
+// Section Header Animations
+const sectionHeaders = [...document.querySelectorAll(".section--header")]
+sectionHeaders.forEach((el) => {
+    gsap.to(el, {
+        scrollTrigger: {
+            trigger: el,
+            start: "top bottom",
+            end: "bottom top",
+            scrub: 1,
+        },
+        y: -50
+    })
+})
+
 // Nav Animations
 gsap.from(".navigation", {
     duration: 2,
     delay: 1,
     opacity: 0
-}) 
+})
 
 // Banner Animations
-// gsap.from(".banner__textContainer--topText, .banner__textContainer--bottomText", {
-//     duration: 2,
-//     delay: 2,
-//     opacity: 0,
-//     stagger: 0.5
-// })
+gsap.from(".banner__textContainer--topText, .banner__textContainer--bottomText", {
+    duration: 2,
+    delay: 2,
+    opacity: 0,
+    stagger: 0.5
+})
 
-// let bannerTl = gsap.timeline({
-//     scrollTrigger: {
-//         trigger: ".banner",
-//         start: "top 5%",
-//         end: "bottom 80%",
-//         scrub: 1,
-//     }
-// })
+gsap.to(".banner__canvasContainer", {
+    duration: 6,
+    // delay: 2,
+    opacity: 1,
+    top: "0%",
+    ease: "power2.out"
+})
 
-// bannerTl.to(".banner__textContainer--topText", {
-//    y: -10, 
-// }).to(".banner__textContainer--bottomText", {
-//     y: 10, 
-// }, "<")
-// Threejs canvas will be added to this timeline also
+let bannerTl = gsap.timeline({
+    scrollTrigger: {
+        trigger: ".banner",
+        start: "top top",
+        end: "bottom 80%",
+        scrub: 1,
+    }
+})
+
+bannerTl.to(".banner__textContainer--topText", {
+    y: -10,
+}).to(".banner__textContainer--bottomText", {
+    y: 10,
+}, "<").to(".banner__canvasContainer", {
+    scale: 1.2
+}, "<<")
 
 // Sculpt Animations
+const scultOutlines = [...document.querySelectorAll(".sculpt--outline")]
+scultOutlines.forEach((el) => {
+    gsap.to(el, {
+        scrollTrigger: {
+            trigger: el,
+            start: "top bottom",
+            end: "bottom top",
+            scrub: 1
+        },
+        stagger: 0.2,
+        x: 75
+
+    })
+})
+
+gsap.to(".blue--girl", {
+    scrollTrigger: {
+        trigger: ".blue--girl",
+        start: "top bottom",
+        end: "bottom top",
+        scrub: 1
+    },
+    y: 100
+})
+
+gsap.to(".section--link", {
+    scrollTrigger: {
+        trigger: ".section--link",
+        start: "-=300 bottom",
+        end: "bottom top",
+        scrub: 1,
+    },
+    y: 100
+})
+
+// Experience and Observe Animations
+const expAndObsBorders = [...document.querySelectorAll(".container--border")]
+expAndObsBorders.forEach((el) => {
+    gsap.to(el, {
+        scrollTrigger: {
+            trigger: el,
+            start: "top bottom",
+            end: "bottom top",
+            scrub: 1,
+        },
+        scale: 0.7
+    })
+})
+
+const expAndObsCanvas = [...document.querySelectorAll(".container--canvas")]
+expAndObsCanvas.forEach((el) => {
+    gsap.to(el, {
+        scrollTrigger: {
+            trigger: el,
+            start: "top bottom",
+            end: "bottom top",
+            scrub: 1,
+        },
+        scale: 1.25
+    })
+})
+
+const expAndObsText = [...document.querySelectorAll(".canvas--text")]
+expAndObsText.forEach((el) => {
+    gsap.to(el, {
+        scrollTrigger: {
+            trigger: el,
+            start: "top bottom",
+            end: "bottom top",
+            scrub: 1,
+        },
+        scale: 0.7
+    })
+})
+
+// Earn Animations
+// Anim for bg on small-med screens
+gsap.to(".earn__bg", {
+    scrollTrigger: {
+        trigger: ".earn__bg",
+        start: "top bottom",
+        end: "bottom top",
+        scrub: 2,
+    },
+    x: 50
+})
+
+// desktop anim here
+
+gsap.to(".earn__image", {
+    scrollTrigger: {
+        trigger: ".earn__image",
+        start: "top bottom",
+        end: "bottom top",
+        scrub: 1,
+    },
+    y: 50
+})
+
+
 
 
 /**
@@ -291,7 +414,7 @@ const tick = () => {
         // material.userData.shader.uniforms.uMouse.value = mouseKnotXY
     }
 
- 
+
     torusOne.rotation.y = elapsedTime / 3
     torusOne.rotation.z = elapsedTime / 4
 

@@ -268,11 +268,13 @@ button,
 .banner .banner__textContainer--topText {
   font-size: clamp(2rem, 2rem, 8rem);
   font-size: var(--fs-hm);
+  mix-blend-mode: difference;
 }
 
 .banner .banner__textContainer--bottomText {
   font-family: "Nunito", sans-serif;
   font-size: var(--fs-hs);
+  mix-blend-mode: difference;
 }
 
 .text--outline {
@@ -454,10 +456,11 @@ button {
 }
 
 .banner__canvasContainer {
+  opacity: 0;
   max-width: 100vw;
   position: absolute;
   z-index: -10;
-  top: 50%;
+  top: 85%;
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
@@ -518,6 +521,10 @@ button {
       -ms-flex-align: end;
           align-items: flex-end;
   margin-top: 1rem;
+}
+
+.sculpt .blue--girl {
+  z-index: -10;
 }
 
 @media (min-width: 500px) {
