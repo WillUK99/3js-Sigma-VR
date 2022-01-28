@@ -2,6 +2,26 @@
     display: flex;
     align-items: center;
     text-decoration: none;
+    position: relative;
+    transition: transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+    &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        height: 1px;
+        width: 100%;
+        background: white;
+        transform-origin: 100% 50%;
+        transform: scale3d(0, 1, 1);
+        transition: transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
+    &:hover {
+        transform: scale3d(1.5, 1.5, 1.5);
+        &::before {
+            transform-origin: 0% 50%;
+            transform: scale3d(1, 1, 1);
+        }
+    }
 
     svg {
         margin-left: 0.5rem;

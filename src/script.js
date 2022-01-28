@@ -55,6 +55,30 @@ const mouseleaveHandler = (e) => {
 window.addEventListener("mousemove", mousemoveHandler)
 window.addEventListener("mouseleave", mouseleaveHandler)
 
+const cursorExp = [...document.querySelectorAll(".cursor--exp")]
+
+const cursorExpand = (e) => {
+    gsap.to(cursor, {
+        scale: 0.5,
+        backgroundColor: "white",
+        x: -25,
+    })
+}
+
+const cursorDespand = (e) => {
+    gsap.to(cursor, {
+        scale: 1,
+        backgroundColor: "transparent",
+        x: 0,
+    })
+}
+
+cursorExp.forEach((el) => {
+    el.addEventListener("mousemove", cursorExpand)
+    el.addEventListener("mouseout", cursorDespand)
+})
+
+
 gsap.registerPlugin(ScrollTrigger)
 
 /**
@@ -71,6 +95,20 @@ sectionHeaders.forEach((el) => {
             scrub: 1,
         },
         y: -50
+    })
+})
+
+// Section Link Animations
+const sectionLinks = [...document.querySelectorAll(".section--link")]
+sectionLinks.forEach((el) => {
+    gsap.to(el, {
+        scrollTrigger: {
+            trigger: el,
+            start: "-=300 bottom",
+            end: "bottom top",
+            scrub: 1,
+        },
+        y: 100
     })
 })
 
@@ -124,7 +162,7 @@ scultOutlines.forEach((el) => {
             end: "bottom top",
             scrub: 1
         },
-        stagger: 0.2,
+        stagger: 100,
         x: 75
 
     })
@@ -137,18 +175,9 @@ gsap.to(".blue--girl", {
         end: "bottom top",
         scrub: 1
     },
-    y: 100
+    y: 50
 })
 
-gsap.to(".section--link", {
-    scrollTrigger: {
-        trigger: ".section--link",
-        start: "-=300 bottom",
-        end: "bottom top",
-        scrub: 1,
-    },
-    y: 100
-})
 
 // Experience and Observe Animations
 const expAndObsBorders = [...document.querySelectorAll(".container--border")]
@@ -192,15 +221,30 @@ expAndObsText.forEach((el) => {
 
 // Earn Animations
 // Anim for bg on small-med screens
-gsap.to(".earn__bg", {
-    scrollTrigger: {
-        trigger: ".earn__bg",
-        start: "top bottom",
-        end: "bottom top",
-        scrub: 2,
-    },
-    x: 50
+window.addEventListener("resize", (e) => {
+    if (window.innerWidth < 1050) {
+        gsap.to(".earn__bg", {
+            scrollTrigger: {
+                trigger: ".earn__bg",
+                start: "top bottom",
+                end: "bottom top",
+                scrub: 1,
+            },
+            x: 50
+        })
+    } else {
+        gsap.to(".earn__bg", {
+            scrollTrigger: {
+                trigger: ".earn__bg",
+                start: "top bottom",
+                end: "bottom top",
+                scrub: 1,
+            },
+            y: 50
+        })
+    }
 })
+
 
 // desktop anim here
 
@@ -215,6 +259,54 @@ gsap.to(".earn__image", {
 })
 
 
+// Social Animations 
+const socialTl = gsap.timeline({
+    scrollTrigger: {
+        trigger: ".social__container",
+        start: "top bottom",
+        end: "bottom top",
+        scrub: 1,
+    }
+})
+
+socialTl.fromTo(".social__bgTop", {
+    opacity: 0,
+    x: -100,
+}, {
+    opacity: 1,
+    x: 100,
+}).fromTo(".blue--milk", {
+    opacity: 0,
+}, {
+    opacity: 1,
+    y: 50
+}, "<").to(".social__bgBot", {
+    x: -100
+}, "<<")
+
+// Footer Animations
+const footerTl = gsap.timeline({
+    scrollTrigger: {
+        trigger: ".footer",
+        start: "top bottom",
+    },
+})
+
+footerTl.fromTo(".footer__text", {
+    opacity: 0,
+    y: 100
+}, {
+    opacity: 1,
+    y: 0,
+    duration: 1,
+    ease: "power2.out"
+
+}).fromTo(".footer__inputLinks", {
+    opacity: 0
+}, {
+    opacity: 1,
+    duration: 1
+})
 
 
 /**
@@ -258,10 +350,6 @@ camera.position.x = 1
 camera.position.y = 1
 camera.position.z = 20
 scene.add(camera)
-
-// Controls
-// const controls = new OrbitControls(camera, canvas)
-// controls.enableDamping = true
 
 /**
  * Torus
@@ -345,50 +433,10 @@ renderer.localClippingEnabled = true
 const pointLight = new THREE.PointLight(0xffffff, 1)
 pointLight.position.set(0, 5, 10)
 scene.add(pointLight)
-// const pointLightHelper = new THREE.PointLightHelper(pointLight)
-// scene.add(pointLightHelper)
-
-//Ambient Light
-// const ambLight = new THREE.AmbientLightProbe(0xffffff, 1)
-// scene.add(ambLight)
 
 const updateLight = () => {
     PointLightHelper.update()
 }
-
-/**
- * GUI
- */
-// Color gui
-class ColorGUIHelper {
-    constructor(object, prop) {
-        this.object = object
-        this.prop = prop
-        console.log(this.object)
-    }
-    get value() {
-        return `#${this.object[this.prop].getHexString()}`
-    }
-    set value(hexString) {
-        this.object[this.prop].set(hexString)
-    }
-}
-
-// const gui = new GUI()
-// gui.addColor(new ColorGUIHelper(pointLight, "color"), "value").name("PointLight Color")
-// gui.add(pointLight, "intensity", 0, 2, 0.01)
-// gui.add(pointLight, "distance", 0, 100).onChange(updateLight)
-
-
-const makeXYZGUI = (gui, vec3, name, onChangeFn = undefined) => {
-    const folder = gui.addFolder(name)
-    folder.add(vec3, "x", -10, 10).onChange(onChangeFn)
-    folder.add(vec3, "y", -10, 10).onChange(onChangeFn)
-    folder.add(vec3, "z", -10, 10).onChange(onChangeFn)
-    folder.open()
-}
-
-// makeXYZGUI(gui, pointLight.position, "position", updateLight)
 
 /**
  * Mouse Interactions
@@ -416,23 +464,10 @@ const tick = () => {
 
 
     torusOne.rotation.y = elapsedTime / 3
-    torusOne.rotation.z = elapsedTime / 4
+    torusOne.rotation.z = elapsedTime / 10
 
-    // torusOne.rotation.y += 0.2 * (targetX - torusOne.rotation.y)
-    // torusOne.rotation.z += -0.5 * (targetY - torusOne.rotation.z)
-
-    // gsap.to(torusOne.rotation, {
-    //     duration: 0.2,
-    //     z: `+= -0.5 * (targetY - ${torusOne.rotation.z})`
-    // })
-
-    // pointLight.position.x += Math.sin(elapsedTime)/10
-    // pointLight.intensity += Math.sin(elapsedTime)/100
-
-    // pointLight.position.x = THREE.MathUtils.lerp(-5, 5, Math.abs(Math.sin(elapsedTime)))
-
-    // Update controls
-    // controls.update()
+    torusOne.rotation.y = -mouseXY.x / 2000
+    torusOne.rotation.z = mouseXY.y / 2000
 
     // Render
     renderer.render(scene, camera)
@@ -440,37 +475,6 @@ const tick = () => {
     // Call tick again on the next frame
     window.requestAnimationFrame(tick)
 }
+console.log(torusOne)
 
 tick()
-
-//testing arrows to follow cursor
-// .cursor-arrow
-// const offset = 40
-// const arrowsArr = document.querySelector(".arrow-cursor")
-// const arrowsBoundingRectsArr = arrowsArr.map((arrow) => arrow.getClientRects()[0])
-
-// window.addEventListener("mousemove", (e) => {
-//     for (let arrow of arrowsBoundingRectsArr) {
-//         const centerOfArrow = [
-//             arrow.x + arrow.width / 2,
-//             arrow.y + arrow.height / 2
-//         ]
-
-//         const angle = Math.atan2(e.pageX - centerOfArrow[0], - (e.pageY - centerOfArrow[1]) * (180 / Math.PI))
-//         log(angle)
-//         arrow.style.setProperty('--angle', `${angle - offset}deg`)
-//     }
-// })
-
-// const boxCenter = [
-//     rects.x + rects.width / 2,
-//     rects.y + rects.height / 2
-// ]
-
-// window.addEventListener('mousemove', (event) => {
-//     const angle = Math.atan2(
-//         event.pageX - boxCenter[0], - (event.pageY - boxCenter[1])
-//     ) * (180 / Math.PI)
-
-//     arrowsArr.style.setProperty('--angle', `${angle - offset}deg`)
-// })

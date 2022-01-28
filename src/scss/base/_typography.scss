@@ -145,12 +145,10 @@ button,
     .banner__textContainer--topText {
         font-size: clamp(2rem, 2rem, 8rem);
         font-size: var(--fs-hm);
-        mix-blend-mode: difference;
     }
     .banner__textContainer--bottomText {
         font-family: "Nunito", sans-serif;
         font-size: var(--fs-hs);
-        mix-blend-mode: difference;
     }
 }
 

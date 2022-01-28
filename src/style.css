@@ -98,6 +98,11 @@ a, button {
   cursor: pointer;
 }
 
+.cursor--exp {
+  text-decoration: none;
+  color: white;
+}
+
 .width--90 {
   width: 90%;
   max-width: 1600px;
@@ -268,13 +273,11 @@ button,
 .banner .banner__textContainer--topText {
   font-size: clamp(2rem, 2rem, 8rem);
   font-size: var(--fs-hm);
-  mix-blend-mode: difference;
 }
 
 .banner .banner__textContainer--bottomText {
   font-family: "Nunito", sans-serif;
   font-size: var(--fs-hs);
-  mix-blend-mode: difference;
 }
 
 .text--outline {
@@ -376,6 +379,40 @@ button {
       -ms-flex-align: center;
           align-items: center;
   text-decoration: none;
+  position: relative;
+  -webkit-transition: -webkit-transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: -webkit-transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1), -webkit-transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.section--link::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  height: 1px;
+  width: 100%;
+  background: white;
+  -webkit-transform-origin: 100% 50%;
+          transform-origin: 100% 50%;
+  -webkit-transform: scale3d(0, 1, 1);
+          transform: scale3d(0, 1, 1);
+  -webkit-transition: -webkit-transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: -webkit-transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1), -webkit-transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.section--link:hover {
+  -webkit-transform: scale3d(1.5, 1.5, 1.5);
+          transform: scale3d(1.5, 1.5, 1.5);
+}
+
+.section--link:hover::before {
+  -webkit-transform-origin: 0% 50%;
+          transform-origin: 0% 50%;
+  -webkit-transform: scale3d(1, 1, 1);
+          transform: scale3d(1, 1, 1);
 }
 
 .section--link svg {
@@ -628,6 +665,7 @@ button {
 .earn__image {
   width: 60%;
   max-width: 500px;
+  z-index: -10;
 }
 
 .earn .section--link {

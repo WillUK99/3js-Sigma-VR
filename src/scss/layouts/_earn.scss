@@ -23,6 +23,7 @@
     &__image {
         width: 60%;
         max-width: 500px;
+        z-index: -10;
     }
     .section--link {
         margin-top: 1.5rem;
