@@ -220,33 +220,6 @@ expAndObsText.forEach((el) => {
 })
 
 // Earn Animations
-// Anim for bg on small-med screens
-window.addEventListener("resize", (e) => {
-    if (window.innerWidth < 1050) {
-        gsap.to(".earn__bg", {
-            scrollTrigger: {
-                trigger: ".earn__bg",
-                start: "top bottom",
-                end: "bottom top",
-                scrub: 1,
-            },
-            x: 50
-        })
-    } else {
-        gsap.to(".earn__bg", {
-            scrollTrigger: {
-                trigger: ".earn__bg",
-                start: "top bottom",
-                end: "bottom top",
-                scrub: 1,
-            },
-            y: 50
-        })
-    }
-})
-
-
-// desktop anim here
 
 gsap.to(".earn__image", {
     scrollTrigger: {
@@ -465,9 +438,6 @@ const tick = () => {
 
     torusOne.rotation.y = elapsedTime / 3
     torusOne.rotation.z = elapsedTime / 10
-
-    torusOne.rotation.y = -mouseXY.x / 2000
-    torusOne.rotation.z = mouseXY.y / 2000
 
     // Render
     renderer.render(scene, camera)
